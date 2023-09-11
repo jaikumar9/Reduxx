@@ -3,18 +3,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useRef } from "react";
 import './App.css'
+import Task from "./components/Task"
+import TaskList from "./components/TaskList"
 
 function App() {
-  const countRef = useRef(0);
-  const increment = () => {
-    countRef.current += 1;
-    console.log(`Current count: ${countRef.current}`);
-  };
   return (
     <>
 
     <div>
-      <button onClick={increment}>Increment</button>
+      <Task/>
+      <TaskList/>
     </div>
 
     </>

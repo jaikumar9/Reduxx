@@ -3,15 +3,21 @@ import { useDispatch } from "react-redux";
 import { addTodo } from "../actions/index";
 
 
-const dispatch = useDispatch();
-const inputRef = useRef(null);
-function addNewTask() {
 
-    const task = inputRef.current.value.trim();
-    if (task !== "") {
-        dispatch(addTodo(task));
-        inputRef.current.value == "";
-    }
+function addNewTask() {
+    const dispatch = useDispatch();
+    const inputRef = useRef(null);
+
+    const handleAddTask = () => { // Event handler to add the task
+        const task = inputRef.current.value.trim();
+        if (task !== "") {
+            dispatch(addTodo(task));
+            inputRef.current.value = "";
+        }
+
+        console.log(task)
+    };
+
 
     return (
         <>
@@ -23,7 +29,7 @@ function addNewTask() {
                         ref={inputRef}
                         className="taskInput"
                     />
-                    <button onClick={addNewTask}>
+                    <button onClick={handleAddTask}>
                          Add Task
                     </button>
                 </div>

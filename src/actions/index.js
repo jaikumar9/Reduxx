@@ -8,6 +8,12 @@ export const addTodo = (text) => {
     };
 };
 
+// export const getTodos =()=>{
+//   return{
+//     type:"GET_TASK",
+//    }
+// }
+
 export const deleteTodo = (id) =>{
     return{
         type: "DELETE_TASK",
